@@ -2,18 +2,18 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"net/http"
+	"go-egg/internal/server"
 )
 
+// main todo 后期需要迁移到 cmd 目录下面
 func main() {
-	s := gin.Default()
+	router := gin.New()
 
-	s.GET("/", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"msg": "Hello World!",
-		})
-	})
+	server.SetupRoute(router)
 
 	// 运行服务
-	s.Run(":7001")
+	err := router.Run(":7001")
+	if err != nil {
+		panic(err.Error())
+	}
 }
