@@ -1,9 +1,8 @@
-package server
+package routes
 
 import (
 	"github.com/gin-gonic/gin"
 	"go-egg/internal/handler"
-	"net/http"
 )
 
 // RegisterAPIRoutes 注册API相关路由
@@ -20,9 +19,5 @@ func RegisterAPIRoutes(r *gin.Engine) {
 
 	r.GET("/500", func(ctx *gin.Context) {
 		panic("致命错误")
-
-		ctx.JSON(http.StatusOK, gin.H{
-			"msg": "500错误",
-		})
 	})
 }
