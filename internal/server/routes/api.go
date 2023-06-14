@@ -14,6 +14,7 @@ func RegisterAPIRoutes(r *gin.Engine) {
 			handle := new(handler.UserHandle)
 
 			userGroup.GET("/", handle.Index)
+			userGroup.POST("/register", handle.Register)
 		}
 	}
 

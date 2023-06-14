@@ -4,7 +4,6 @@ import (
 	"errors"
 	"fmt"
 	"go-egg/config"
-	"go-egg/internal/model"
 	"go-egg/pkg/database"
 	"go-egg/pkg/logger"
 	"gorm.io/driver/mysql"
@@ -42,5 +41,5 @@ func SetupDB() {
 	database.SqlDB.SetMaxIdleConns(cf.MaxIdleConnections)
 	database.SqlDB.SetConnMaxLifetime(time.Duration(cf.MaxLifeSeconds) * time.Second)
 
-	database.DB.AutoMigrate(&model.User{}) // 自动迁移
+	// database.DB.AutoMigrate(&model.User{}) // 自动迁移
 }
