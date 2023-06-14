@@ -10,6 +10,7 @@ import (
 func init() {
 	boot.SetupConfig("")
 	boot.SetLogger()
+	boot.SetupDB()
 }
 
 // main todo 后期需要迁移到 cmd 目录下面

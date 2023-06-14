@@ -8,5 +8,6 @@ type Config struct {
 	Port  int
 	Debug bool
 
-	Log LogConfig
+	Log      LogConfig
+	DataBase DataBaseConfig
 }

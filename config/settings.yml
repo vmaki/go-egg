@@ -10,3 +10,14 @@ log:
   maxAge: 7
   maxBackup: 5
   compress: false
+database:
+  driver: mysql
+  host: 127.0.0.1
+  port: 3306
+  database: go-egg
+  username: root
+  password: 123456
+  charset: utf8mb4
+  maxOpenConnections: 100
+  maxIdleConnections: 25
+  maxLifeSeconds: 300
