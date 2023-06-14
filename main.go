@@ -2,17 +2,23 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"go-egg/internal/server"
+	"github.com/spf13/cast"
+	"go-egg/config"
+	"go-egg/internal/boot"
 )
+
+func init() {
+	boot.SetupConfig("")
+}
 
 // main todo 后期需要迁移到 cmd 目录下面
 func main() {
 	router := gin.New()
 
-	server.SetupRoute(router)
+	boot.SetupRoute(router)
 
 	// 运行服务
-	err := router.Run(":7001")
+	err := router.Run(":" + cast.ToString(config.GlobalConfig.Port))
 	if err != nil {
 		panic(err.Error())
 	}

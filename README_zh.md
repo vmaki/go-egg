@@ -6,6 +6,8 @@
 
 - `internal`：存放项目内部的代码，不对外暴露。
 
+  -  boot：项目启动时要初始化的资源。
+
 - - `dao`：存放数据访问对象（Data Access Object）的代码。
   - `handler`：存放 HTTP 请求处理器的代码。
   - `middleware`：存放 HTTP 中间件的代码。

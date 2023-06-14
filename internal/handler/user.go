@@ -2,6 +2,7 @@ package handler
 
 import (
 	"github.com/gin-gonic/gin"
+	"go-egg/config"
 	"net/http"
 )
 
@@ -11,6 +12,6 @@ type UserHandle struct {
 
 func (h *UserHandle) Index(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
-		"msg": "Hello World!!!",
+		"msg": "Hello " + config.GlobalConfig.Name,
 	})
 }

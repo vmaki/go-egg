@@ -1,0 +1,4 @@
+name: go-egg
+mode: local
+port: 7001
+debug: true

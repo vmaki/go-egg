@@ -1,7 +1,7 @@
-package server
+package boot
 
 import (
-	"go-egg/internal/server/routes"
+	"go-egg/internal/server"
 	"net/http"
 	"strings"
 
@@ -11,7 +11,7 @@ import (
 func SetupRoute(router *gin.Engine) {
 	registerGlobalMiddleWare(router)
 
-	routes.RegisterAPIRoutes(router)
+	server.RegisterAPIRoutes(router)
 
 	setup404Handler(router)
 }
