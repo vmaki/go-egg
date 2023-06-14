@@ -1,6 +1,7 @@
 package boot
 
 import (
+	"go-egg/internal/middleware"
 	"go-egg/internal/server"
 	"net/http"
 	"strings"
@@ -19,7 +20,7 @@ func SetupRoute(router *gin.Engine) {
 // registerGlobalMiddleWare 注册全局中间件
 func registerGlobalMiddleWare(router *gin.Engine) {
 	router.Use(
-		gin.Logger(),
+		middleware.Logger(),
 		gin.Recovery(),
 	)
 }

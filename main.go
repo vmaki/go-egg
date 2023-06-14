@@ -14,6 +14,8 @@ func init() {
 
 // main todo 后期需要迁移到 cmd 目录下面
 func main() {
+	gin.SetMode(gin.ReleaseMode)
+
 	router := gin.New()
 
 	boot.SetupRoute(router)
