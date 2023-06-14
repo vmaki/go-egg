@@ -7,4 +7,6 @@ type Config struct {
 	Mode  string
 	Port  int
 	Debug bool
+
+	Log LogConfig
 }
